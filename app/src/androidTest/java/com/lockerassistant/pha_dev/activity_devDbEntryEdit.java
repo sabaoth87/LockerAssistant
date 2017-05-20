@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.lockerassistant.pha_dev.R;
+import com.lockerassistant.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

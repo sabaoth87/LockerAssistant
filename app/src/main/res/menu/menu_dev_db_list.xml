@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/menuItems_devDb"
+        android:enabled="true">
+        <item
+            android:id="@+id/menu_dev_db_add"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_dev_dv_add"
+            app:showAsAction="ifRoom|withText" />
+        <item
+            android:id="@+id/menu_dev_db_view"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="@string/menu_dev_db_view"
+            app:showAsAction="ifRoom|withText" />
+    </group>
+
+</menu>

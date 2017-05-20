@@ -6,6 +6,10 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="menu_dev_db_view">/dev.view</string>
+    <string name="menu_dev_dv_add">/dev.add</string>
+    <string name="menu_dev_db_list_lp_delete">Delete</string>
+
     <string name="dev_db_edit_title">Subject</string>
     <string name="dev_db_edit_body">Issue or comment&#8230;</string>
     <string name="dev_db_edit_subject">Specific Activity?</string>

@@ -15,8 +15,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toolbar;
 
-import tnk.pha_cc.R;
-import tnk.pha_cc.fragment_chargeCodeAdd;
+import com.lockerassistant.R;
 
 /**
  * Created by Tom on 2017-04-18.
