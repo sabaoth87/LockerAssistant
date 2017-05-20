@@ -55,7 +55,7 @@ public class activity_devDbList extends ListActivity {
          */
         //getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_dev_db_list);
-        setActionBar(myToolbar);
+        //setActionBar(myToolbar);
     }
 
     private void fillData() {
@@ -97,11 +97,6 @@ public class activity_devDbList extends ListActivity {
 
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
-            case R.id.abAdd:
-                Log.v(TAG, "SELECTED::  AppBar - Add");
-                Intent iAdd = new Intent(this, fragment_chargeCodeAdd.class);
-                startActivity(iAdd);
-                return true;
             case R.id.menu_dev_db_add:
                 Log.v(TAG, "SELECTED:: AppBar - /dev.add");
                 Intent i = new Intent(this, activity_devDbEntryEdit.class);
