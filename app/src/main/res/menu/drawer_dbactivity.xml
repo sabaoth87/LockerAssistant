@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_db_add"
+            android:icon="@drawable/ic_tnk_add_3"
+            android:title="Db Entry" />
+        <item
+            android:id="@+id/nav_db_flags"
+            android:icon="@drawable/ic_tnk_flag_green"
+            android:title="Current Priorities" />
+        <item
+            android:id="@+id/nav_db_home"
+            android:icon="@drawable/ic_tnk_home_2"
+            android:title="Back to App" />
+    </group>
+
+</menu>

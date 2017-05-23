@@ -16,8 +16,8 @@
             android:title="Slideshow" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:icon="@drawable/ic_tnk_notebook_4"
+            android:title="Db" />
     </group>
 
     <item android:title="Communicate">
