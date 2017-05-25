@@ -19,5 +19,8 @@
     <string name="dev_db_edit_date">DATE</string>
     <string name="dev_db_list_noEntries">No Entries!</string>
 
+    <string name="dev_db_nav_add">Db Entry</string>
+    <string name="dev_db_nav_priorities">Priorities</string>
+    <string name="dev_db_nav_return">Return to App</string>
 
 </resources>

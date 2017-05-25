@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_db_add"
             android:icon="@drawable/ic_tnk_add_3"
-            android:title="Db Entry" />
+            android:title="@string/dev_db_nav_add" />
         <item
             android:id="@+id/nav_db_flags"
             android:icon="@drawable/ic_tnk_flag_green"
-            android:title="Current Priorities" />
+            android:title="@string/dev_db_nav_priorities" />
         <item
             android:id="@+id/nav_db_home"
             android:icon="@drawable/ic_tnk_home_2"
-            android:title="Back to App" />
+            android:title="@string/dev_db_nav_return" />
     </group>
 
 </menu>
