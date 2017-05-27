@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +37,6 @@ import com.pha_dev.activity_devDbList;
  * [M04]onNavigationItemSelected
  * {v0.0} - Default
  *
- * trying to get this to actually fucking upload
  */
 
 
@@ -52,7 +52,9 @@ public class activity_lockassist_main extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         /*
         #[M00]onCreate[begin]
+        * {v0.0} - Default
         */
+        Log.v(TAG, "STARTED :: onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainactivity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -85,6 +87,7 @@ public class activity_lockassist_main extends AppCompatActivity
     public void onBackPressed() {
         /*
         #[M01]onBackPressed[begin]
+        * {v0.0} - Default
         */
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -101,6 +104,7 @@ public class activity_lockassist_main extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         /*
         #[M02]onCreateOptionsMenu[begin]
+        * {v0.0} - Default
         */
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -114,6 +118,7 @@ public class activity_lockassist_main extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         /*
         #[M03]onOptionsItemSelected[begin]
+        * {v0.0} - Default
         */
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -136,17 +141,16 @@ public class activity_lockassist_main extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         /*
         #[M04]onNavigationItemSelected[begin]
+        * {v0.0} - Default
         */
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_la_add) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_la_flags) {
 
-        } else if (id == R.id.nav_slideshow) {
-            Intent i = new Intent(this, activity_devDbList.class);
-            startActivityForResult(i, ACTIVITY_CREATE);
         } else if (id == R.id.nav_dev_db) {
             Intent i = new Intent(this, activity_devDbList.class);
             startActivityForResult(i, ACTIVITY_CREATE);

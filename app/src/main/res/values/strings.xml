@@ -3,6 +3,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_la_add">Add Entry</string>
+    <string name="nav_la_flags">Flags</string>
+    <string name="nav_la_view">View Contents</string>
+    <string name="nav_la_users">View Users</string>
 
     <string name="action_settings">Settings</string>
 
@@ -18,6 +22,7 @@
     <string name="dev_db_edit_time">TIME</string>
     <string name="dev_db_edit_date">DATE</string>
     <string name="dev_db_list_noEntries">No Entries!</string>
+    <string name="dev_db_label">Developer\'s Database</string>
 
     <string name="dev_db_nav_add">Db Entry</string>
     <string name="dev_db_nav_priorities">Priorities</string>

@@ -6,9 +6,9 @@
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
 
-    <item name="ic_tnk_add_3" type="drawable">@drawable/ic_tnk_add_3</item>
-    <item name="ic_tnk_flag_green" type="drawable">@drawable/ic_tnk_flag_green</item>
-    <item name="ic_tnk_home_2" type="drawable">@drawable/ic_tnk_home_2</item>
-    <item name="ic_tnk_notebook_4" type="drawable">@drawable/ic_tnk_notebook_4</item>
+    <item name="icon_tnk_add" type="drawable">@drawable/add_3</item>
+    <item name="icon_tnk_flag_green" type="drawable">@drawable/flag_green</item>
+    <item name="icon_tnk_home" type="drawable">@drawable/home_2</item>
+    <item name="icon_tnk_notebook" type="drawable">@drawable/notebook_4</item>
 
 </resources>

@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import com.lockerassistant.R;
@@ -35,6 +36,24 @@ import com.lockerassistant.R;
  * Based on RemindersListActivity
  */
 
+/**
+ * #METHODS
+ * [M00]onCreate
+ * {v0.1d} - Dev
+ * <p>
+ * [M01]onBackPressed
+ * {v0.1d} - Dev
+ * <p>
+ * [M02]onCreateOptionsMenu
+ * {v0.1d} - Dev
+ * <p>
+ * [M03]onOptionsItemSelected
+ * {v0.1d} - Dev
+ * <p>
+ * [M04]onNavigationItemSelected
+ * {v0.1d} - Dev
+ */
+
 public class activity_devDbList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
         {
@@ -44,6 +63,8 @@ public class activity_devDbList extends AppCompatActivity
     private static final int ACTIVITY_EDIT = 1;
 
     private sqlAdapter_devDb mDbHelper;
+
+            public ListView entriesList;
 
     /**
      * Called when the activity is first created.
@@ -56,15 +77,16 @@ public class activity_devDbList extends AppCompatActivity
         mDbHelper = new sqlAdapter_devDb(this);
         mDbHelper.open();
         fillData();
-        //registerForContextMenu(getListView());
+        //registerForContextMenu(R.id.dev_db_entries);
 
         /*
         #[M00]onCreate[begin]
+        * {v0.1d} - Dev
         */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_dev_db);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_dev_db);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,17 +95,19 @@ public class activity_devDbList extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_dev_db);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_dev_db);
         navigationView.setNavigationItemSelectedListener(this);
         /*
         #[M00]onCreate[end]
         */
+
+        entriesList = (ListView) findViewById(R.id.dev_db_entries);
 
     }
 
@@ -100,13 +124,14 @@ public class activity_devDbList extends AppCompatActivity
         // and an array of the fields we want to bind
         // to the view
         int[] to = new int[]{R.id.text1};
-
+        //TODO Link with the binView in curAdapter. Use Walkthrough!
         // Now create a simple cursor adapter and set it
         // to display
         SimpleCursorAdapter entries =
                 new SimpleCursorAdapter(this, R.layout.row_dev_db_entry,
                         entriesCursor, from, to);
         //setListAdapter(entries);
+        entriesList.setAdapter(entries);
     }
 
     @Override
@@ -121,6 +146,7 @@ public class activity_devDbList extends AppCompatActivity
     public void onBackPressed() {
         /*
         #[M01]onBackPressed[begin]
+        * {v0.1d} - Dev
         */
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -138,9 +164,10 @@ public class activity_devDbList extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         /*
         #[M02]onCreateOptionsMenu[begin]
+        * {v0.1d} - Dev
         */
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_dev_db_list, menu);
         return true;
         /*
         #[M02]onCreateOptionsMenu[end]
@@ -151,6 +178,7 @@ public class activity_devDbList extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         /*
         #[M03]onOptionsItemSelected[begin]
+        * {v0.1d} - Dev
         */
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -173,24 +201,18 @@ public class activity_devDbList extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         /*
         #[M04]onNavigationItemSelected[begin]
+        * {v0.1d} - Dev
         */
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_la_add) {
+            createEntry();
+        } else if (id == R.id.nav_la_flags) {
 
         } else if (id == R.id.nav_dev_db) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
