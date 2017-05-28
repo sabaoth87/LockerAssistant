@@ -123,6 +123,11 @@ public class sqlAdapter_devDb {
                         null) > 0;
     }
 
+    public Cursor newAdapterReturn() {
+        Log.v(TAG, "Fetching all entries - " + DATABASE_TABLE);
+        return mDb.rawQuery("SELECT * FROM " + DATABASE_TABLE, null);
+    }
+
     private static class DatabaseHelper extends SQLiteOpenHelper {
         DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -143,6 +148,5 @@ public class sqlAdapter_devDb {
              * in the future with ALTER scripts
              */
         }
-
     }
 }

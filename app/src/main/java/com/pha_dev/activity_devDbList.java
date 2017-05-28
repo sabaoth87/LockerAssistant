@@ -1,5 +1,7 @@
 package com.pha_dev;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -18,8 +20,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import com.lockerassistant.R;
 
@@ -39,7 +43,7 @@ import com.lockerassistant.R;
 /**
  * #METHODS
  * [M00]onCreate
- * {v0.1d} - Dev
+ * {v0.2d} - Dev
  * <p>
  * [M01]onBackPressed
  * {v0.1d} - Dev
@@ -58,12 +62,14 @@ public class activity_devDbList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
         {
 
+            final Context context = this;
     private static final String TAG = "PHA:: DevList ";
     private static final int ACTIVITY_CREATE = 0;
     private static final int ACTIVITY_EDIT = 1;
 
     private sqlAdapter_devDb mDbHelper;
 
+            public curAdapter_devDbList curAdapter;
             public ListView entriesList;
 
     /**
@@ -72,21 +78,36 @@ public class activity_devDbList extends AppCompatActivity
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        /*
+        #[M00]onCreate[begin]
+        * {v0.2d} - Dev
+        */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dev_db_entries);
+
+        /**
+         * Assign The Views!!
+         */
+        // Find the listview to populate
+        entriesList = (ListView) findViewById(R.id.dev_db_entries);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_dev_db);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_dev_db);
+
         mDbHelper = new sqlAdapter_devDb(this);
         mDbHelper.open();
         fillData();
         //registerForContextMenu(R.id.dev_db_entries);
 
-        /*
-        #[M00]onCreate[begin]
-        * {v0.1d} - Dev
-        */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_dev_db);
+
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_dev_db);
+        /**
+         *
+         *
+         * Set onClickListeners
+         */
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +115,14 @@ public class activity_devDbList extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+        entriesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                showEntry(view.getId());
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_dev_db);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -106,32 +135,19 @@ public class activity_devDbList extends AppCompatActivity
         /*
         #[M00]onCreate[end]
         */
-
-        entriesList = (ListView) findViewById(R.id.dev_db_entries);
-
     }
 
     private void fillData() {
         Log.v(TAG, "STARTED :: fillData()");
-        Cursor entriesCursor = mDbHelper.fetchAllEntries();
-        Log.v(TAG, "Cursor received all entries successfully!");
-        startManagingCursor(entriesCursor);
+        //Cursor entriesCursor = mDbHelper.fetchAllEntries();
+        //Log.v(TAG, "Cursor received all entries successfully!");
+        //tartManagingCursor(entriesCursor);
 
-        //Create an array to specify the field we want
-        //only the TITLE
-        String[] from = new String[]{sqlAdapter_devDb.KEY_TITLE};
-
-        // and an array of the fields we want to bind
-        // to the view
-        int[] to = new int[]{R.id.text1};
-        //TODO Link with the binView in curAdapter. Use Walkthrough!
-        // Now create a simple cursor adapter and set it
-        // to display
-        SimpleCursorAdapter entries =
-                new SimpleCursorAdapter(this, R.layout.row_dev_db_entry,
-                        entriesCursor, from, to);
-        //setListAdapter(entries);
-        entriesList.setAdapter(entries);
+        Cursor new_entriesCursor = mDbHelper.newAdapterReturn();
+        Log.v(TAG, ",.:' NEW   Cursor ':.,  received all entries successfully!");
+        // Setup the curAdapter
+        curAdapter = new curAdapter_devDbList(this, new_entriesCursor);
+        entriesList.setAdapter(curAdapter);
     }
 
     @Override
@@ -213,7 +229,7 @@ public class activity_devDbList extends AppCompatActivity
         } else if (id == R.id.nav_dev_db) {
 
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_dev_db);
         drawer.closeDrawer(GravityCompat.START);
         return true;
         /*
@@ -242,7 +258,41 @@ public class activity_devDbList extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        fillData();
+        Cursor entriesCursorReturn = mDbHelper.fetchAllEntries();
+        Log.v(TAG, "Cursor received all entries successfully!");
+        // Switch to new cursor and update the contents of ListView
+        curAdapter.changeCursor(entriesCursorReturn);
     }
 
-}
+            public void showEntry(long id) {
+                // custom dialog
+                final Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_dev_db_entry);
+                dialog.setTitle("Title...");
+
+                Cursor cursor = mDbHelper.fetchEntry(id);
+                // Extract properties from cursor
+                String stringTitle = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_TITLE));
+
+
+                // set the custom dialog components - text, image and button
+                TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_tv_title);
+                text.setText(stringTitle);
+                ImageView image = (ImageView) dialog.findViewById(R.id.diag_dev_db_imgbtn);
+                image.setImageResource(R.drawable.locked_6);
+
+                Button dialogButton = (Button) dialog.findViewById(R.id.diag_dev_db_edit_confirm);
+                // if button is clicked, close the custom dialog
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+            }
+        }
+
+
+

@@ -45,7 +45,7 @@ public class curAdapter_devDbList extends CursorAdapter {
         TextView tvBody = (TextView) view.findViewById(R.id.text1);
         //TextView tvPriority = (TextView) view.findViewById(R.id.tvPriority);
         // Extract properties from cursor
-        String body = cursor.getString(cursor.getColumnIndexOrThrow("body"));
+        String body = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_TITLE));
         //int priority = cursor.getInt(cursor.getColumnIndexOrThrow("priority"));
         // Populate fields with extracted properties
         tvBody.setText(body);
