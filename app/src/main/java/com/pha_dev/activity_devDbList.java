@@ -24,11 +24,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lockerassistant.R;
 
 /**
  * Created by Tom on 2017-04-18.
+ * <p>
+ * Android Application Development for Dummies
+ * <p>
+ * Creating you Application's SQLite Database
+ * Page 281
+ * <p>
+ * Based on RemindersListActivity
  */
 
 /**
@@ -59,18 +67,17 @@ import com.lockerassistant.R;
  */
 
 public class activity_devDbList extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-        {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-            final Context context = this;
+    final Context context = this;
     private static final String TAG = "PHA:: DevList ";
     private static final int ACTIVITY_CREATE = 0;
     private static final int ACTIVITY_EDIT = 1;
 
     private sqlAdapter_devDb mDbHelper;
 
-            public curAdapter_devDbList curAdapter;
-            public ListView entriesList;
+    public curAdapter_devDbList curAdapter;
+    public ListView entriesList;
 
     /**
      * Called when the activity is first created.
@@ -119,7 +126,8 @@ public class activity_devDbList extends AppCompatActivity
         entriesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                showEntry(view.getId());
+                Log.v(TAG, "item clicked " + view.toString());
+                showEntry(i);
             }
         });
 
@@ -217,7 +225,7 @@ public class activity_devDbList extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         /*
         #[M04]onNavigationItemSelected[begin]
-        * {v0.1d} - Dev
+        * {v0.2d} - Dev
         */
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -225,9 +233,9 @@ public class activity_devDbList extends AppCompatActivity
         if (id == R.id.nav_la_add) {
             createEntry();
         } else if (id == R.id.nav_la_flags) {
-
+            Toast.makeText(context, "Flags Selected :: Coming Soon", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_dev_db) {
-
+            Toast.makeText(context, "Dev Db Selected :: Coming Soon", Toast.LENGTH_LONG).show();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_dev_db);
         drawer.closeDrawer(GravityCompat.START);
@@ -261,38 +269,40 @@ public class activity_devDbList extends AppCompatActivity
         Cursor entriesCursorReturn = mDbHelper.fetchAllEntries();
         Log.v(TAG, "Cursor received all entries successfully!");
         // Switch to new cursor and update the contents of ListView
+        Toast.makeText(context, "Updating list...", Toast.LENGTH_SHORT).show();
         curAdapter.changeCursor(entriesCursorReturn);
+        Toast.makeText(context, "Refreshed", Toast.LENGTH_SHORT).show();
     }
 
-            public void showEntry(long id) {
-                // custom dialog
-                final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.dialog_dev_db_entry);
-                dialog.setTitle("Title...");
+    public void showEntry(long id) {
+        // custom dialog
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_dev_db_entry);
+        dialog.setTitle("Title...");
 
-                Cursor cursor = mDbHelper.fetchEntry(id);
-                // Extract properties from cursor
-                String stringTitle = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_TITLE));
+        Cursor cursor = mDbHelper.fetchEntry(id + 1);
+        // Extract properties from cursor
+        String stringTitle = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_TITLE));
 
 
-                // set the custom dialog components - text, image and button
-                TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_tv_title);
-                text.setText(stringTitle);
-                ImageView image = (ImageView) dialog.findViewById(R.id.diag_dev_db_imgbtn);
-                image.setImageResource(R.drawable.locked_6);
+        // set the custom dialog components - text, image and button
+        TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_tv_title);
+        text.setText(stringTitle);
+        ImageView image = (ImageView) dialog.findViewById(R.id.diag_dev_db_imgbtn);
+        image.setImageResource(R.drawable.locked_6);
 
-                Button dialogButton = (Button) dialog.findViewById(R.id.diag_dev_db_edit_confirm);
-                // if button is clicked, close the custom dialog
-                dialogButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();
+        Button dialogButton = (Button) dialog.findViewById(R.id.diag_dev_db_edit_confirm);
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
             }
-        }
+        });
+
+        dialog.show();
+    }
+}
 
 
 
