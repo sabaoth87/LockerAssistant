@@ -286,12 +286,12 @@ public class activity_devDbList extends AppCompatActivity
 
 
         // set the custom dialog components - text, image and button
-        TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_tv_title);
+        TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_tv_title);
         text.setText(stringTitle);
         ImageView image = (ImageView) dialog.findViewById(R.id.diag_dev_db_imgbtn);
         image.setImageResource(R.drawable.locked_6);
 
-        Button dialogButton = (Button) dialog.findViewById(R.id.diag_dev_db_edit_confirm);
+        Button dialogButton = (Button) dialog.findViewById(R.id.diagbtn_dev_db_edit_confirm);
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override

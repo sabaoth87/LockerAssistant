@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/diag_dev_db_tv_title"
+        android:id="@+id/diag_dev_db_entry_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -13,83 +13,84 @@
         android:text="@string/dev_db_edit_title" />
 
     <EditText
-        android:id="@+id/diag_dev_db_edit_title"
+        android:id="@+id/diag_dev_db_entry_et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/diag_dev_db_tv_title" />
+        android:layout_toEndOf="@+id/diag_dev_db_entry_tv_title" />
 
     <TextView
-        android:id="@+id/diag_dev_db_tv_body"
+        android:id="@+id/diag_dev_db_entry_tv_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_tv_title"
+        android:layout_below="@+id/diag_dev_db_entry_tv_title"
         android:text="@string/dev_db_edit_body" />
 
     <EditText
-        android:id="@+id/diag_dev_db_edit_body"
+        android:id="@+id/diag_dev_db_entry_et_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_tv_title"
+        android:layout_below="@+id/diag_dev_db_entry_tv_title"
         android:minLines="2"
         android:gravity="top"
         android:scrollbars="vertical" />
 
     <TextView
-        android:id="@+id/diag_dev_db_tv_status"
+        android:id="@+id/diag_dev_db_entry_tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_edit_body"
+        android:layout_below="@+id/diag_dev_db_entry_et_body"
         android:layout_alignParentStart="true"
         android:text="@string/dev_db_edit_status" />
 
     <EditText
-        android:id="@+id/diag_dev_db_edit_status"
+        android:id="@+id/diag_dev_db_entry_et_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_edit_body"
-        android:layout_toEndOf="@+id/diag_dev_db_tv_status" />
+        android:layout_below="@+id/diag_dev_db_entry_et_body"
+        android:layout_toEndOf="@+id/diag_dev_db_entry_tv_status" />
 
     <TextView
-        android:id="@+id/diag_dev_db_tv_date"
+        android:id="@+id/diag_dev_db_entry_tv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_tv_status"
+        android:layout_below="@+id/diag_dev_db_entry_tv_status"
         android:layout_alignParentStart="true"
         android:text="@string/dev_db_edit_date" />
 
     <Button
-        android:id="@+id/diag_dev_db_btn_date"
+        android:id="@+id/diag_dev_db_entry_btn_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_tv_date"
+        android:layout_below="@+id/diag_dev_db_entry_tv_date"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/diag_dev_db_tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_btn_date"
+        android:layout_below="@+id/diag_dev_db_entry_btn_date"
         android:layout_alignParentStart="true"
         android:text="@string/dev_db_edit_time" />
 
     <Button
-        android:id="@+id/diag_dev_db_btn_time"
+        android:id="@+id/diagbtn_dev_db_time"
         android:layout_width="match_parent"
         android:layout_below="@+id/diag_dev_db_tv_time"
         android:layout_alignParentStart="true"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/diag_dev_db_edit_confirm"
+        android:id="@+id/diagbtn_dev_db_edit_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diag_dev_db_btn_time"
+        android:layout_below="@+id/diagbtn_dev_db_time"
         android:layout_alignParentStart="true"
         android:text="@string/dev_db_edit_confirm" />
 
     <ImageButton
         android:id="@+id/diag_dev_db_imgbtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diagbtn_dev_db_edit_confirm" />
 
 </RelativeLayout>
