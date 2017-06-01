@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAppDarkBg"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,16 +13,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_title" />
 
         <EditText
             android:id="@+id/dev_db_edit_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_body" />
 
         <EditText
@@ -30,31 +34,38 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:minLines="5"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:textColor="@color/colorAppDarkAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_subject" />
 
         <EditText
             android:id="@+id/dev_db_edit_subject"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_status" />
 
         <EditText
             android:id="@+id/dev_db_edit_status"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAppDarkAccent" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_date" />
 
         <Button
@@ -63,8 +74,10 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAppDarkAccent"
             android:text="@string/dev_db_edit_time" />
 
         <Button
