@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -109,6 +111,24 @@ public class activity_devDbEntryEdit extends Activity {
         mDbHelper.open();
         setRowIdFromIntent();
         poplateFields();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        /*
+        #[M01]onBackPressed[begin]
+        * {v0.0} - Default
+        */
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_dev_db);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+        /*
+        #[M01]onBackPressed[end]
+        */
     }
 
     @Override
