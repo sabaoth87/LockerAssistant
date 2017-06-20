@@ -8,11 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/PHA_Theme_DarkForest">
         <activity
             android:name="com.activity_lockassist_main"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,12 +22,12 @@
         <activity
             android:name="com.pha_dev.activity_devDbEntryEdit"
             android:label="@string/dev_db_label"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
         </activity>
         <activity
             android:name="com.pha_dev.activity_devDbList"
             android:label="@string/dev_db_label"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
         </activity>
     </application>
 
