@@ -8,26 +8,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/PHA_Theme">
         <activity
             android:name="com.activity_lockassist_main"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.pha_dev.activity_devDbEntryEdit"
             android:label="@string/dev_db_label"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme.NoActionBar"
+            android:parentActivityName="com.pha_dev.activity_devDbList">
         </activity>
         <activity
             android:name="com.pha_dev.activity_devDbList"
             android:label="@string/dev_db_label"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/PHA_Theme.NoActionBar"
+            android:parentActivityName="com.activity_lockassist_main">
         </activity>
     </application>
 
