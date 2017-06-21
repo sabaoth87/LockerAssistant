@@ -283,11 +283,21 @@ public class activity_devDbList extends AppCompatActivity
         Cursor cursor = mDbHelper.fetchEntry(id + 1);
         // Extract properties from cursor
         String stringTitle = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_TITLE));
+        String stringBody = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_BODY));
+        String stringDate = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_ENTRY_DATE));
+        String stringStatus = cursor.getString(cursor.getColumnIndexOrThrow(sqlAdapter_devDb.KEY_ENTRY_STATUS));
 
 
         // set the custom dialog components - text, image and button
-        TextView text = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_tv_title);
-        text.setText(stringTitle);
+        TextView titleText = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_et_title);
+        titleText.setText(stringTitle);
+        TextView bodyText = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_et_body);
+        bodyText.setText(stringBody);
+        TextView dateText = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_btn_date);
+        dateText.setText(stringDate);
+        TextView statusText = (TextView) dialog.findViewById(R.id.diag_dev_db_entry_et_status);
+        statusText.setText(stringStatus);
+
         ImageView image = (ImageView) dialog.findViewById(R.id.diag_dev_db_imgbtn);
         image.setImageResource(R.drawable.locked_6);
 

@@ -1,26 +1,44 @@
 <resources>
 
     <!-- Base application theme. -->
+<<<<<<< HEAD
     <style name="PHA_Theme" parent="Theme.AppCompat.Light.DarkActionBar">
+=======
+    <style name="PHA_Theme_DarkForest" parent="Theme.AppCompat.Light.DarkActionBar">
+>>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorAppDarkBg</item>
-        <item name="colorPrimaryDark">@color/colorAppGray</item>
-        <item name="colorAccent">@color/colorAppDarkAccent</item>
+        <item name="colorBackground">@color/DarkForest_AppBackground</item>
+        <item name="colorPrimary">@color/DarkForest_AppPrimary</item>
+        <item name="colorPrimaryDark">@color/DarkForest_AppPrimaryDark</item>
+        <item name="colorAccent">@color/DarkForest_AppAccent</item>
+        <item name="textColorPrimary">@color/DarkForest_TextPrimary</item>
     </style>
 
+<<<<<<< HEAD
     <style name="PHA_Theme.NoActionBar">
+=======
+    <style name="PHA_Theme_DarkForest.NoActionBar">
+>>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
+<<<<<<< HEAD
     <style name="PHA_Theme.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+=======
+    <style name="PHA_Theme_DarkForest.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+>>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAppDarkBg</item>
         <item name="colorPrimaryDark">@color/colorAppGray</item>
         <item name="colorAccent">@color/colorAppDarkAccent</item>
     </style>
 
+<<<<<<< HEAD
     <style name="PHA_Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+=======
+    <style name="PHA_Theme_DarkForest.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+>>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAppDarkBg</item>
         <item name="colorPrimaryDark">@color/colorAppGray</item>

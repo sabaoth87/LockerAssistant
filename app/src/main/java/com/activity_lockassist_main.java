@@ -82,7 +82,6 @@ public class activity_lockassist_main extends AppCompatActivity
         */
     }
 
-
     @Override
     public void onBackPressed() {
         /*

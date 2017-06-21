@@ -10,4 +10,13 @@
 
     <color name="colorAppDarkBg">#424242</color>
     <color name="colorAppDarkAccent">#73cf93</color>
+
+    <!--     Dark Forest Theme   -->
+    <color name="DarkForest_AppBackground">#000000</color>
+    <color name="DarkForest_AppPrimary">#0f2929</color>
+    <color name="DarkForest_AppPrimaryDark">#424242</color>
+    <color name="DarkForest_AppAccent">#73cf93</color>
+    <color name="DarkForest_TextPrimary">#16a421</color>
+
+
 </resources>
