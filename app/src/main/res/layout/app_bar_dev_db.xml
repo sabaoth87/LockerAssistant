@@ -10,14 +10,14 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/PHA_Theme.AppBarOverlay">
+        android:theme="@style/PHA_Theme_DarkForest.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_dev_db"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@color/colorAppDarkBg"
-            app:popupTheme="@style/PHA_Theme.PopupOverlay" />
+            app:popupTheme="@style/PHA_Theme_DarkForest.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 

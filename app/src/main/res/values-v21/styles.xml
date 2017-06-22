@@ -3,11 +3,9 @@
 
     <style name="PHA_Theme_DarkForest" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorBackground">@color/DarkForest_AppBackground</item>
         <item name="colorPrimary">@color/DarkForest_AppPrimary</item>
         <item name="colorPrimaryDark">@color/DarkForest_AppPrimaryDark</item>
         <item name="colorAccent">@color/DarkForest_AppAccent</item>
-        <item name="textColorPrimary">@color/DarkForest_TextPrimary</item>
         <item name="android:navigationBarColor">@color/DarkForest_AppPrimary</item>
     </style>
 </resources>
