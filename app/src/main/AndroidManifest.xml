@@ -8,19 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
-        android:theme="@style/PHA_Theme">
-        <activity
-            android:name="com.activity_lockassist_main"
-            android:label="@string/app_name"
-            android:theme="@style/PHA_Theme.NoActionBar">
-=======
         android:theme="@style/PHA_Theme_DarkForest">
         <activity
             android:name="com.activity_lockassist_main"
             android:label="@string/app_name"
             android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
->>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,22 +21,14 @@
         <activity
             android:name="com.pha_dev.activity_devDbEntryEdit"
             android:label="@string/dev_db_label"
-<<<<<<< HEAD
-            android:theme="@style/PHA_Theme.NoActionBar"
-            android:parentActivityName="com.pha_dev.activity_devDbList">
-=======
+            android:parentActivityName="com.pha_dev.activity_devDbList"
             android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
->>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         </activity>
         <activity
             android:name="com.pha_dev.activity_devDbList"
             android:label="@string/dev_db_label"
-<<<<<<< HEAD
-            android:theme="@style/PHA_Theme.NoActionBar"
-            android:parentActivityName="com.activity_lockassist_main">
-=======
+            android:parentActivityName="com.activity_lockassist_main"
             android:theme="@style/PHA_Theme_DarkForest.NoActionBar">
->>>>>>> 0e1052eebc2711ac9d044189e397dd78dffa2a99
         </activity>
     </application>
 
