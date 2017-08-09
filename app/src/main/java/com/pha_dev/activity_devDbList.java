@@ -110,8 +110,6 @@ public class activity_devDbList extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         /**
-         *
-         *
          * Set onClickListeners
          */
 
